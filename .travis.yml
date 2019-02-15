@@ -1,0 +1,7 @@
+language: python
+branches:
+  only:
+    - master
+script:
+    - echo 'start'
+    - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./version.sh; fi'
