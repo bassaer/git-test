@@ -5,3 +5,5 @@ branches:
 script:
     - echo 'start'
     - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./version.sh; fi'
+    - echo $TRAVIS_REPO_SLUG
+
