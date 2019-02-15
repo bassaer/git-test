@@ -4,4 +4,4 @@ branches:
     - master
 script:
     - echo 'start'
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ./version.sh'
+    - '[ "${TRAVIS_PULL_REQUEST}" == "false" ] && ./version.sh'
