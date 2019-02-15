@@ -1,3 +1,4 @@
 language: python
 script:
-    - ./version.sh
+    - echo 'start'
+    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ./version.sh'
