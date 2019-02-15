@@ -1,4 +1,7 @@
 language: python
+branches:
+  only:
+    - master
 script:
     - echo 'start'
     - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ./version.sh'
