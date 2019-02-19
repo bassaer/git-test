@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$TRAVIS_PULL_REQUEST" -ne "false" ]; then
+    echo "pull request build."
+    exit 0
+fi
+
 set -f
 
 version=$(cat CHANGELOG.md | awk '
