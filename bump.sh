@@ -5,7 +5,7 @@ if [ "$TRAVIS_PULL_REQUEST" -ne "false" ]; then
     exit 0
 fi
 
-set -f
+set -euf
 
 version=$(cat CHANGELOG.md | awk '
 tolower($0) ~ /^ver.* / {
@@ -37,3 +37,5 @@ git commit -m "update version [ci skip]"
 git tag -a $version -m "$msg"
 git push origin master
 git push origin --tags
+
+echo "$version : $msg"
