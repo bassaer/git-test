@@ -4,4 +4,4 @@ branches:
     - master
 script:
     - echo 'start'
-    - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./version.sh; fi'
+    - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./bump.sh; fi'
