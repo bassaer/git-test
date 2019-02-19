@@ -5,7 +5,7 @@ if [ "$TRAVIS_PULL_REQUEST" -ne "false" ]; then
     exit 0
 fi
 
-set -f
+set -euf
 
 version=$(cat CHANGELOG.md | awk '
 tolower($0) ~ /^ver.* / {
