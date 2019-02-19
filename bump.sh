@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$TRAVIS_PULL_REQUEST" -ne "false" ]; then
+    echo "pull request build."
+    exit 0
+fi
+
 set -f
 
 version=$(cat CHANGELOG.md | awk '
@@ -21,7 +26,7 @@ tolower($0) ~ /ver.* /,/NF/ {
 
 sed -i "/compile/s/[0-9]*\.[0-9]*\.[0-9]*/$VERSION/" ./README.md
 
-openssl aes-256-cbc -K $encrypted_5ef410394863_key -iv $encrypted_5ef410394863_iv -in travis_rsa.enc -out ~\/.ssh/travis_rsa -d
+openssl aes-256-cbc -K $encrypted_5ef410394863_key -iv $encrypted_5ef410394863_iv -in travis_rsa.enc -out ~/.ssh/travis_rsa -d
 chmod 600 ~/.ssh/id_rsa
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 

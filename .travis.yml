@@ -3,6 +3,6 @@ branches:
   only:
     - master
 script:
-    - echo 'start'
+    - echo 'OK'
 after_success:
-    - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./bump.sh; fi'
+    - bash bump.sh
