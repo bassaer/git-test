@@ -37,3 +37,5 @@ git commit -m "update version [ci skip]"
 git tag -a $version -m "$msg"
 git push origin master
 git push origin --tags
+
+echo "$version : $msg"
