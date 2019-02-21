@@ -1,11 +1,11 @@
 #!/bin/bash
 
+set -ef
+
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     echo "pull request build."
     exit 0
 fi
-
-set -euf
 
 version=$(cat CHANGELOG.md | awk '
 tolower($0) ~ /^ver.* / {
@@ -33,7 +33,7 @@ echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 git config --global user.name "TravisCI"
 git config --global user.email "app.nakayama@gmail.com"
 git add ./README.md
-git commit -m "update version [ci skip]"
+git commit -m "bump version [ci skip]"
 git tag -a $version -m "$msg"
 git push origin master
 git push origin --tags

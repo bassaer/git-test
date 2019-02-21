@@ -5,4 +5,5 @@ branches:
 script:
     - echo 'OK'
 after_success:
+    - set -e
     - bash bump.sh
