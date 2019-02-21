@@ -36,6 +36,18 @@ cd git-test
 sed -i "/compile/s/[0-9]*\.[0-9]*\.[0-9]*/$version/" ./README.md
 git add ./README.md
 git commit -m "bump version [ci skip]"
-git tag -a $version -m "$(echo -e $msg)"
 git push origin master
-git push origin --tags
+
+body=$(cat << EOF
+{
+  "tag_name": "$version",
+  "target_commitish": "master",
+  "name": "v$version",
+  "body": "$(echo -e $msg)",
+  "draft": false,
+  "prerelease": false
+}
+EOF
+curl -X POST -d $body -H "Authorization: token $GITHUB_TOKEN" \
+    "https://api.github.com/repos/$TRAVIS_REPO_SLUG/releases" \
+    > /dev/null 2>&1
