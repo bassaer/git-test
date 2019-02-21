@@ -1,9 +1,13 @@
 language: python
+env:
+  global:
+    secure: wU1afcCUM89I9pZRZP8ahnqfwB+8NL+HKkudpImBwsU1J9zM74vjP8+Nmg1DoBmqRimmuqEc/qAHapXgytRNGiqH4kg+dxboSnRwAK4yOpo5OWg/pmkReZuNVCgL/bvc+VaiSACTo5y0nPDH2Vn/taH2qKIOxFu3daL4ai4cBJiKiuOLOo7jUuQDzSv9BGyE/Svh1qp4LmPqBbf+dLlplIQoToZuTvj2hNj0qsOhzAHR/HVnHEgYWVcLBxs/vb9r5Y9hxfmaUJg6C24mINbsgnQ156Ie8e8TaLWXoS/T2M7kbzKicDYzgT1e11wHDDCdBZ+eNzrR2HAZQ3d3GV7+ifeiFXi7pw5sGuIdxAro0sKUKFv/ElIGS7q6Kry2+AvgewtUbjRd3LPkFyJej+TrhkOrKPxPBBC0XmJEpXb/Rp6zfD5xxxF4cRRM5Xv5TexrIZGzMsptqEF8pdAM3cT67Z64ORVkeKUKY+TjBRFaps86aYr25hBuOyv2KClus7D3Kd+/ekhgK4iPY+14IfXQIz+RJT8B+3s4g2jKedEGbOxhJuOqMBL20cBAA5SrriooeNh4XKXBOcGHzcNpwlbBUBmaHr9f7Ii0aBYoyEOou+UX5pHYVvMhewcj33aFZT6i8i6eo1lKpLgBHSKyS1qSM4MW+2lm5w9tU1Qv9uOrzpQ=
 branches:
   only:
-    - master
+  - master
 script:
-    - echo 'OK'
+- echo 'OK'
 after_success:
-    - set -e
-    - bash bump.sh
+- set -e
+- bash bump.sh
+

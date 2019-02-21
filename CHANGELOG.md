@@ -1,5 +1,9 @@
 CHANGELOG
 
+version 5.0.0
+* release 5.0.0
+* hoge
+
 version 3.0.0
 * release 3.x
 * foobar
