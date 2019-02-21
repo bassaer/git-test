@@ -4,6 +4,7 @@
 
 ```
 dependencies {
-    compile 'com.github.bassaer:git-test:0.0.1'
+    compile 'com.github.bassaer:git-test:3.0.0'
 }
 ```
+
