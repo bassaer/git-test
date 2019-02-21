@@ -1,5 +1,9 @@
 CHANGELOG
 
+version 6.0.0
+* foo
+* bar
+
 version 5.0.0
 * release 5.0.0
 * hoge

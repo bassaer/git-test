@@ -18,10 +18,13 @@ BEGIN {
     ORS = "\\n";
 }
 tolower($0) ~ /ver.* /,/NF/ {
-    print $0
+    if ($0 ~ /^ver.*/) {
+        next
+    }
     if (NF==0) {
         exit
     }
+    print $0
 }')
 
 openssl aes-256-cbc -K $encrypted_5ef410394863_key -iv $encrypted_5ef410394863_iv -in travis_rsa.enc -out ~/.ssh/id_rsa -d
@@ -43,11 +46,13 @@ body=$(cat << EOF
   "tag_name": "$version",
   "target_commitish": "master",
   "name": "v$version",
-  "body": "$(echo -e $msg)",
+  "body": "$msg",
   "draft": false,
   "prerelease": false
 }
 EOF
-curl -X POST -d $body -H "Authorization: token $GITHUB_TOKEN" \
+)
+
+curl -X POST -d "$body" -H "Authorization: token $GITHUB_TOKEN" \
     "https://api.github.com/repos/$TRAVIS_REPO_SLUG/releases" \
     > /dev/null 2>&1
