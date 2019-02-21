@@ -1,5 +1,9 @@
 CHANGELOG
 
+version 3.0.0
+* release 3.x
+* foobar
+
 ver 2.1.0
 * fix foo
 * fix bar
