@@ -34,6 +34,7 @@ git config --global user.name "TravisCI"
 git config --global user.email "app.nakayama@gmail.com"
 git add ./README.md
 git commit -m "bump version [ci skip]"
+git log
 git tag -a $version -m "$msg"
 git push origin master
 git push origin --tags
