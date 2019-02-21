@@ -1,5 +1,9 @@
 CHANGELOG
 
+ver 2.1.0
+* fix foo
+* fix bar
+
 version 2.0.1
 * hoge
 * piyo
