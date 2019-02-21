@@ -38,6 +38,6 @@ cd git-test
 sed -i "/compile/s/[0-9]*\.[0-9]*\.[0-9]*/$version/" ./README.md
 git add ./README.md
 git commit -m "bump version [ci skip]"
-git tag -a $version -m "$msg"
+git tag -a $version -m $"$msg"
 git push origin master
 git push origin --tags
