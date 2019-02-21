@@ -7,3 +7,4 @@ dependencies {
     compile 'com.github.bassaer:git-test:3.0.0'
 }
 ```
+
